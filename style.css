@@ -1,0 +1,104 @@
+@charset "UTF-8";
+@font-face {
+    font-family: 'Determination';
+    src: url(Fontes/determinationmonoweb-webfont.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+    font-family: 'Determination';
+}
+
+.container {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    opacity: 0;
+}
+
+.container.noite {
+    color: white;
+}
+
+.container.ativar {
+    opacity: 1;
+    animation: fade-in 2s ease-in;
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    } to {
+        opacity: 1;
+    }
+}
+
+.containersec {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    top: 100%;
+    background-size: cover;
+}
+
+.containersec.ativar {
+    top: 0;
+    animation: up 3s ease-out;
+}
+
+@keyframes up {
+    from {
+        transform: translateY(100%);
+    } to {
+        transform: translateY(0);
+    }
+}
+
+.text-button {
+    position: absolute;
+    top: 25vh;
+}
+
+.text {
+    position: absolute;
+    left: 30vw;
+}
+
+.button {
+    position: relative;
+    margin: 150px;
+    left: 13vw;
+    opacity: 0;
+    animation: visibility 0.1s 7s forwards;
+}
+
+@keyframes visibility {
+    from {
+        opacity: 0;
+    } to {
+        opacity: 1;
+    }
+}
+
+a {
+    margin-left: 150px;
+    margin-right: 150px;
+    width: 60px;
+    height: 35px;
+    font-size: 30px;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+a:hover {
+    color: yellow;
+}
+
+a.desativar {
+    visibility: hidden;
+}
